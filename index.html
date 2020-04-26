@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bill's Scrabble</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+</head>
+
+<body>
+
+    <div id="pni"></div>
+    <div id="mc" class="main_container">
+        <div id="ba" class="board_area" ondragover="onDragOver(event)" ondragenter="onDragEnter(event)">
+            <script>build_scrabble_board();</script>
+        </div>
+        <div id="pa" class="player_area" ondragover="onDragOver(event)" ondragenter="onDragEnter(event)">
+            <script>build_player_area();</script>
+        </div>
+        <div id="sa" class="score_area">
+            <script>build_score_area();</script>
+        </div>
+        <div id="other_player_rack" class="other_player_rack"></div>
+    </div>
+
+
+</body>
+</html>

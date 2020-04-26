@@ -1,0 +1,107 @@
+Express install stuff.
+  package.json
+  app.json
+  npm install express --save
+  npm install nodemon --save
+  npm install ejs --save
+  npm install socket.io --save
+
+
+initial simplified - just a board and place tiles 
+-DONE-
+XX build a player rack area that can hold > 9 tiles
+XX build the scrabble bag array of all 100 tiles
+XX build a shuffle function to load the bag? 
+xx UI :  add the tripleword/doubleword/etc stars in correct places
+xx UI :  add bag on screen
+xx CODE : have a bag on screen the player clicks on to get their own tiles 
+        and removes from the bag array
+xx UI :  input to enter playername
+xx CODE : resync for a player that drops? reload the board
+xx code - remove from rack array when tile placed
+xx UI :  input score area for each player - window, scrollable
+xx UI :  change button colors for seated players to make it more obvious
+xx CODE/UI : dashed border box on drag over
+xx       ui/code   add a reset game button
+xx       UI : show # remaining tiles in bag
+xx        UI :  make score area look better
+xx - server side track score text area as well for reconnected player         
+xx            CODE/UI : cant get (or move?) tiles if you are not a seated player - check seat.socket?
+xx            - seat -    can stop bag tiles
+xx                        can stop scores
+xx - faster updates on disconnects?
+xx   stop spectators from clicking things! - except restart?
+xx   disable  score area until its not player join table
+xx   disable tile bag click unless your socket has player name
+xx   disable choosing a seat if you are already on one...     
+xx   CLEAN UP THE PLAYER NAME INPUT TO BE BIGGER AND MORE OBVIOUS. ROUNDED CORNERS ETC
+              ALSO add THE FOCUS BIT THAT MOVES THE SCREEN TO it
+xx   CODE/UI : click and place a tile 
+xx       invisible so we can see whats under the item being dragged?
+xx   add cancel to playername input
+xx   add cancel to swap input
+xx   popup swap - can still click bag, disable that while doing swap
+xx   TILE BAG clicked actually to give full 7 tiles (or however many) dont forget to watch for how many tiles are left in bag
+
+
+-TODO-
+
+!!NEXT - for live playing
+
+..verify reset works right after all this too
+
+bug -                
+
+
+  refine popup main CSS for player name on small screens
+                            tile swap
+                            reset game    
+  
+
+2        CODE : SWAP TILES have ability to drag tiles from player rack to the bag
+                and adds back into the bag array - reshuffle
+                swap tiles on click - not enabled when 6 or less tiles left in bag
+                make sure to not put swapped tile back into array until after a new one is given
+                - so either once one is dropped it opens a div with slots for up to 7 tiles with
+                ok and cancel button. ok will take whats in teh temp rack and give that many new opens
+                cancel just puts them back in seat[x].lettersinrack
+
+3       reset button - use div like playername and tiles swap instead of the prompt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// stretch - V2 etc
+
+       set name cookie when join table is clicked
+        on connect try and get cookie value to 're-seat' if its there. check for next join table and use that seat number
+        use the .trigger event to get things kicked off?
+
+CODE/UI : make just one script to build the entire ui vs each div
+        update tiles and fade special board areas 
+add rooms
+add auto scoring
+add save game
+add chat
+CODE : emit error messages to appropriate player(s)
+        tile swaps from bag
+        cant have more than 7 tiles in rack
+        bag empty
+        things like that
+
+
+
+    
+
+
+
